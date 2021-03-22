@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="./src/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <header>
+      <h1>Résumé de la WEEK 3 : PHP</h1>
+    </header>
+    <p> - Enseigner c'est dire dans l'ordre ce qu'on a appris dans le désordre. -</p>
+
+    <div class="terms-to-know">
+      <h2>Les termes à retenir : </h2> <br>
+      <ul>
+        <li>PHP</li>
+        <li>Tableaux</li>
+        <li>Variables</li>
+        <li>Fonctions</li>
+        <li>Conditions</li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <h1>PHP, kezako ?</h1> <br>
+      <p>PHP est un langage de programmation écrit sur la base d'un autre langage de programmation qui est le C. Contrairement au langage C qui est un langage dit "bas niveau", PHP est un langage dit "haut niveau". L'avantage principal des langages de haut niveau est que le programmateur n'a pas à se préoccuper des caractèristiques (gestion de la mémoire entre autres) de l'ordinateur ou l'hôte qui excécute le programme. <br> <br>
+        Rasmus Lerdorf est le créateur de ce langage. (1994) <br><br>
+
+      PS : Ceci dit, tout bon développeur se doit de s'intéresser au performances des ses programmes qu'il travaille avec un langage bas ou haut niveau. <br><br>
+
+      Pour les plus motivés, le lien vers la documentation de l'histoire officielle de PHP : <a href="https://www.php.net/manual/fr/history.php.php">Histoire de PHP</a>
+      </p> <br>
+
+      <p>Comme dans tous langages de programmation, il y'a une syntaxe précise à respecter. Des règles de programmation et d'algorithmie à connaitre.
+      </p>
+
+      <h1>Les variables ?</h1> <br>
+      <p>Une variable est une chaîne de caractère qui permet de stocker une donnée particulière. Une donnée peut avoir des types différents, pour en lister les plus connus : <br><br>
+        - Nombre entier <span>Integer</span> : 1555, -4587 <br>
+        - Nombre décimal <span>Float</span> : -15.0547, 3.14 <br>
+        - Chaîne de caractère <span>String</span> : "John Doe", "Hello-World!" <br>
+        - Booléen <span>Bool</span> : true (1) ou false (0) <br> <br>
+        
+        Imaginez que vous travailliez pour AMELI. Votre chef vous demande de créer des variables pour pouvoir stocker les données des utilisateurs dans une base de données. Vous avez de la chance, vous avez un(e) super(be) collègue qui vous a fait une liste non-exhaustive des données à enregistrer. Il ne vous reste plus qu'à rédiger le nom des variables correspondants à chaque donnée. On aura, à enregistrer, pour une personne lambda : <br> <br>
+        - Son nom de famille <br>
+        - Son prénom (partons du principe que tout le monde à un seul prénom) <br>
+        - Sa date de naissance <br>
+        - Son genre <br><br>
+
+        En PHP, toutes variables doivent commencer par un dollar ($). Un fichier PHP doit également se construire de la façon suivante : <br><br>
+
+        <span>nom_de_votre_fichier.php | ex : base_de_donnees_ameli.php</span><br>
+        <span>$nomDeMaVariable | ex : $myName</span><br><br>
+
+        PHP utilise la convention de nommage camelCase. La première lettre de chaque mot commence par une majuscule, sauf pour le premier mot (et PAS d'espace entre les mots). <br> <br>
+      
+        <i class="fas fa-info-circle"></i> Il y'a une variante du camelCase qui est le PascalCase ou Upper CamelCase. Toutes les premières lettres des mots sont écrits en majuscules. <a href="https://dev.to/prahladyeri/underscores-camelcasing-and-pascalcasing-the-three-naming-conventions-every-programmer-should-be-aware-of-3aed">Lien vers articles sur les conventions de nommage</a>. <br> <br>
+        C'est une convention a respester par tous les développeurs, à défaut d'avoir des erreurs de syntaxe en sortie de ses programmes. <br><br>
+
+        Je vous propose une solution parmis temps d'autre : <br>
+
+        <span>$userLastName</span> <br>
+        <span>$userFirstName</span> <br>
+        <span>$userDateOfBirth</span> <br>
+        <span>$userGender</span> <br><br>
+
+        Là, on a juste donner un nom à nos variables. Maintenant on va parler d'initialisation et de déclation. <br>
+
+        Initialiser une variable = la déclarer + lui donner une valeur <br>
+        Déclarer une variable = l'instancier sans lui donner de valeur <br><br>
+
+        Je me propose comme première client d'Ameli. L'objectif maintenant est de stocker mes informations quelque part. Pour ce faire, on va créer un fichier PHP contenant toutes ces informations : 
+
+        <span> user.php</span><br><br>
+
+        Pour que votre navigateur ou que votre terminal puisse comprendre et interprètrer le PHP, il faut systématiquement mettre des balises PHP à l'intérieur de notre fichier. Le seul fait de mettre .php à la fin de votre nom de fichier ne suiffit pas. <br>
+
+
+        Votre fichier PHP doit ressembler au mien. <br>
+
+        <img src="./src/img/variables.png" alt="Image de la declaration des variables pour un user donné"> <br> <br>
+      </p> <br>
+
+      <h1>Les Tableaux ?</h1>
+      <p>Un tableau est un conteneur qui permet de stocker différentes valeurs de variables. On va créer un tableau qui va stocker les données des clients de chez AMELI. Pour chaque client, on aurra 4 valeurs à stocker (nom, prénom, date de naissance et genre).</p><br> <br>
+
+      <h3>Tableau uni-dimensionnel</h3><br>
+      <p>Un tableau est dit uni-dimensionnel lorsqu'il contient un seul index. Dans notre exmple, on peut avoir un tableau qui contient la liste des clients enregistrès par ordre croissant. <br><br>
+
+      <img src="./src/img/userarray.png" alt="Tableau contenant la liste des clients chez AMELI"><br><br>
+
+      Dans notre exemple, on a <span>n</span> index possibles. Le premier index du tableau commence à <span>0 (zéro)</span>. Si on devait donner une taille/longeur à notre tableau, elle serait de <span>n-1</span>. L'index est renseigné entre crochets juste après la variable.
+
+      La fonction <span>echo()</span> (on verra les fonctions un peu plus loin), permet d'afficher la valeur d'une variable. Ici, on veut afficher la valeur de notre variable <span>$userArray</span> à l'index 2. On fera un : <br><br>
+      </p>
+
+      <img src="./src/img/echoarray.png" alt="Commande echo"> <br><br>
+
+      Sortie de console : <br><br>
+      <img src="./src/img/outputarray.png" alt="Sortie de console"><br><br>
+      On voit bien qu'on affiche la valeur de <span>$userArray</span> à l'index <span>2</span>. <br><br>. 
+
+      <h3>Tableau multi-dimensionnel</h3><br>
+      Votre chef vous demande de lui créer un tableau dans lequel on pourra stocker tous les clients ainsi que leurs données. Le tout dans le même tableau, c'est possible en PHP grâce aux tableaux multi-dimensionnels. <br>
+      Un tableau est dit multi-dimensionnel ou associatif lorsqu'il contient au moins deux index. <br>
+      Créeons un tableau associatif contenant trois clients ainsi que leurs données. Puis affichons le nom de famille de notre troisiéme client(e). <br>
+      <img src="./src/img/multiarray.png" alt="Tableau associatif AMELI"><br><br>
+
+      
+      Sortie de console : <br> <br>
+
+      <img src="./src/img/outputmulti.png" alt="Sortie de console pour une tableau associatif"> <br><br>
+
+      <p>Ici, pour accéder à une valeur précise du tableau, on passe par une clef et un index, <span>$completeUserArray['clef']['index_n']</span></p>. <br><br>
+
+    <h3>Les fonctions</h3>
+    <p>En programmation on utilise les fonctions pour effecuter UNE tâche bien précise. Une fonction contient des instructions et une valeur de retour. A une exception près, on peut avoir une fonction qui n'a pas de valeur de retour. Généralement on peut décrire la tâche d'une fonction en commençant par un verbe un verbe : afficher une valeur, comparer deux nombres, calculer une somme...  </p><br>
+
+    Votre chef veut vous faire travailler et vous demande de lui écrire une fonction pour afficher tous les clients présents chez AMELI. Cette fonction prendra en paramètre un tableau associatif. 
+
+    Je vous laisse la tâche d'écrire cette fonction qui aurra comme signature : <br>
+    <img src="./src/img/usersdataprint.png" alt="Signature de la fonction qui permet dafficher les innfos sur les clients"><br><br>
+
+    Si vous avez du mal avec cette partie, je vous conseille de revoir cette quête : <a href="https://odyssey.wildcodeschool.com/quests/1348">Quête 4.2 sur les tableaux multidimensionnels - Odyssé</a><br><br>
+
+    </div>
+
+
+    <script src="./src/js/script.js"></script>
+  </body>
+</html>
